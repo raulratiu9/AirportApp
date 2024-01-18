@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using proiect_final.Models;
+﻿using AirportApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace AirportApp.Controllers

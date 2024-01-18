@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AirportApp.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using proiect_final.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace AirportApp.Controllers
