@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using AirportAPI.Data;
+using AirportAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AirportAPI.Models;
 
 namespace AirportAPI.Controllers
 {
@@ -24,10 +20,10 @@ namespace AirportAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Company>>> GetCompanies()
         {
-          if (_context.Companies == null)
-          {
-              return NotFound();
-          }
+            if (_context.Companies == null)
+            {
+                return NotFound();
+            }
             return await _context.Companies.ToListAsync();
         }
 
@@ -35,10 +31,10 @@ namespace AirportAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Company>> GetCompany(int id)
         {
-          if (_context.Companies == null)
-          {
-              return NotFound();
-          }
+            if (_context.Companies == null)
+            {
+                return NotFound();
+            }
             var company = await _context.Companies.FindAsync(id);
 
             if (company == null)
@@ -85,10 +81,10 @@ namespace AirportAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Company>> PostCompany(Company company)
         {
-          if (_context.Companies == null)
-          {
-              return Problem("Entity set 'AirportContext.Companies'  is null.");
-          }
+            if (_context.Companies == null)
+            {
+                return Problem("Entity set 'AirportContext.Companies'  is null.");
+            }
             _context.Companies.Add(company);
             await _context.SaveChangesAsync();
 

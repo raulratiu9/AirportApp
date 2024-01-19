@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using AirportAPI.Data;
+using AirportAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AirportAPI.Models;
 
 namespace AirportAPI.Controllers
 {
@@ -24,10 +20,10 @@ namespace AirportAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Passenger>>> GetPassengers()
         {
-          if (_context.Passengers == null)
-          {
-              return NotFound();
-          }
+            if (_context.Passengers == null)
+            {
+                return NotFound();
+            }
             return await _context.Passengers.ToListAsync();
         }
 
@@ -35,10 +31,10 @@ namespace AirportAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Passenger>> GetPassenger(int id)
         {
-          if (_context.Passengers == null)
-          {
-              return NotFound();
-          }
+            if (_context.Passengers == null)
+            {
+                return NotFound();
+            }
             var passenger = await _context.Passengers.FindAsync(id);
 
             if (passenger == null)
@@ -85,10 +81,10 @@ namespace AirportAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Passenger>> PostPassenger(Passenger passenger)
         {
-          if (_context.Passengers == null)
-          {
-              return Problem("Entity set 'AirportContext.Passengers'  is null.");
-          }
+            if (_context.Passengers == null)
+            {
+                return Problem("Entity set 'AirportContext.Passengers'  is null.");
+            }
             _context.Passengers.Add(passenger);
             await _context.SaveChangesAsync();
 

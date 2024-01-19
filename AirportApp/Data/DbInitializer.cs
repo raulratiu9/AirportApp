@@ -118,7 +118,7 @@ namespace AirportApp.Data
                     }
                 );
 
-                context.SaveChanges();
+                //context.SaveChanges();
             }
         }
     }

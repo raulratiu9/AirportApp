@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using AirportAPI.Data;
+using AirportAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AirportAPI.Models;
 
 namespace AirportAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/gate")]
     [ApiController]
     public class GatesController : ControllerBase
     {
@@ -24,10 +20,10 @@ namespace AirportAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Gate>>> GetGates()
         {
-          if (_context.Gates == null)
-          {
-              return NotFound();
-          }
+            if (_context.Gates == null)
+            {
+                return NotFound();
+            }
             return await _context.Gates.ToListAsync();
         }
 
@@ -35,10 +31,10 @@ namespace AirportAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Gate>> GetGate(int id)
         {
-          if (_context.Gates == null)
-          {
-              return NotFound();
-          }
+            if (_context.Gates == null)
+            {
+                return NotFound();
+            }
             var gate = await _context.Gates.FindAsync(id);
 
             if (gate == null)
@@ -85,10 +81,10 @@ namespace AirportAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Gate>> PostGate(Gate gate)
         {
-          if (_context.Gates == null)
-          {
-              return Problem("Entity set 'AirportContext.Gates'  is null.");
-          }
+            if (_context.Gates == null)
+            {
+                return Problem("Entity set 'AirportContext.Gates'  is null.");
+            }
             _context.Gates.Add(gate);
             await _context.SaveChangesAsync();
 
