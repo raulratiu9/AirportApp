@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace proiect_final.Models
+namespace AirportApp.Models
 {
     public class RoleEdit
     {

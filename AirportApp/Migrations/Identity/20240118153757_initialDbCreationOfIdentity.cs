@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace proiect_final.Migrations
+namespace proiect_final.Migrations.Identity
 {
-    public partial class identityscript : Migration
+    public partial class initialDbCreationOfIdentity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

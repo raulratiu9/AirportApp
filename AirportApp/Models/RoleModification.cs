@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace proiect_final.Models
+namespace AirportApp.Models
 {
     public class RoleModification
     {

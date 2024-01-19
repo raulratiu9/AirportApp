@@ -1,4 +1,4 @@
-namespace proiect_final.Models
+namespace AirportApp.Models
 {
     public class ErrorViewModel
     {
