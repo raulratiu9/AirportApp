@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AirportAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace AirportAPI.Models
+namespace AirportAPI.Data
 {
     public class AirportContext : DbContext
     {
@@ -13,6 +14,15 @@ namespace AirportAPI.Models
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet<Aircraft> Aircrafts { get; set; }
         public DbSet<Company> Companies { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Flight>().ToTable("Flight");
+            modelBuilder.Entity<Gate>().ToTable("Gate");
+            modelBuilder.Entity<Passenger>().ToTable("Passenger");
+            modelBuilder.Entity<Aircraft>().ToTable("Aircraft");
+            modelBuilder.Entity<Company>().ToTable("Company");
+        }
     }
 
 }

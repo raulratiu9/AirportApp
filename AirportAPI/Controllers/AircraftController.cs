@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using AirportAPI.Data;
+using AirportAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AirportAPI.Models;
 
 namespace AirportAPI.Controllers
 {
@@ -24,10 +20,10 @@ namespace AirportAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Aircraft>>> GetAircrafts()
         {
-          if (_context.Aircrafts == null)
-          {
-              return NotFound();
-          }
+            if (_context.Aircrafts == null)
+            {
+                return NotFound();
+            }
             return await _context.Aircrafts.ToListAsync();
         }
 
@@ -35,10 +31,10 @@ namespace AirportAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Aircraft>> GetAircraft(int id)
         {
-          if (_context.Aircrafts == null)
-          {
-              return NotFound();
-          }
+            if (_context.Aircrafts == null)
+            {
+                return NotFound();
+            }
             var aircraft = await _context.Aircrafts.FindAsync(id);
 
             if (aircraft == null)
@@ -85,10 +81,10 @@ namespace AirportAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Aircraft>> PostAircraft(Aircraft aircraft)
         {
-          if (_context.Aircrafts == null)
-          {
-              return Problem("Entity set 'AirportContext.Aircrafts'  is null.");
-          }
+            if (_context.Aircrafts == null)
+            {
+                return Problem("Entity set 'AirportContext.Aircrafts'  is null.");
+            }
             _context.Aircrafts.Add(aircraft);
             await _context.SaveChangesAsync();
 

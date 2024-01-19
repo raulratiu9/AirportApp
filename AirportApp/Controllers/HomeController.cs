@@ -18,7 +18,7 @@ namespace AirportApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Notification()
         {
             return View();
         }

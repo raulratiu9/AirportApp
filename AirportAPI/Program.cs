@@ -1,4 +1,4 @@
-using AirportAPI.Models;
+using AirportAPI.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,13 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<AirportContext>(options =>
+
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<AirportContext>(options =>
-    options.UseSqlServer("DefaultConnection"));
-builder.Services.AddDbContext<AirportContext>(opt =>
- opt.UseInMemoryDatabase("DefaultConnection"));
 
 
 

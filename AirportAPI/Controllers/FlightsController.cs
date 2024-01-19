@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using AirportAPI.Data;
+using AirportAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AirportAPI.Models;
 
 namespace AirportAPI.Controllers
 {
@@ -24,10 +20,10 @@ namespace AirportAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Flight>>> GetFlights()
         {
-          if (_context.Flights == null)
-          {
-              return NotFound();
-          }
+            if (_context.Flights == null)
+            {
+                return NotFound();
+            }
             return await _context.Flights.ToListAsync();
         }
 
@@ -35,10 +31,10 @@ namespace AirportAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Flight>> GetFlight(int id)
         {
-          if (_context.Flights == null)
-          {
-              return NotFound();
-          }
+            if (_context.Flights == null)
+            {
+                return NotFound();
+            }
             var flight = await _context.Flights.FindAsync(id);
 
             if (flight == null)
@@ -85,10 +81,10 @@ namespace AirportAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Flight>> PostFlight(Flight flight)
         {
-          if (_context.Flights == null)
-          {
-              return Problem("Entity set 'AirportContext.Flights'  is null.");
-          }
+            if (_context.Flights == null)
+            {
+                return Problem("Entity set 'AirportContext.Flights'  is null.");
+            }
             _context.Flights.Add(flight);
             await _context.SaveChangesAsync();
 

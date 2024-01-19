@@ -20,6 +20,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
 builder.Services.AddRazorPages();
 
+
 builder.Services.Configure<IdentityOptions>(options =>
 {
 
@@ -29,10 +30,10 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 builder.Services.AddAuthorization(opts =>
 {
-    opts.AddPolicy("SalesManager", policy =>
+    opts.AddPolicy("AirportManagerAllowed", policy =>
     {
         policy.RequireRole("Manager");
-        policy.RequireClaim("Department", "Sales");
+        policy.RequireClaim("Department", "Management");
     });
 });
 builder.Services.ConfigureApplicationCookie(opts =>
@@ -62,6 +63,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.MapHub<ChatHub>("/Chat");
+app.MapHub<NotificationHub>("/Notification");
+
 app.UseRouting();
 app.UseAuthentication(); ;
 
