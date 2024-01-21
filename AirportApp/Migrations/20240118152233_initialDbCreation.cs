@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace proiect_final.Migrations
+namespace AirportApp.Migrations
 {
     public partial class initialDbCreation : Migration
     {

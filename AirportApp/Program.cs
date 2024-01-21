@@ -32,7 +32,7 @@ builder.Services.AddAuthorization(opts =>
 {
     opts.AddPolicy("AirportManagerAllowed", policy =>
     {
-        policy.RequireRole("Manager");
+        // policy.RequireRole("Manager");
         policy.RequireClaim("Department", "Management");
     });
 });

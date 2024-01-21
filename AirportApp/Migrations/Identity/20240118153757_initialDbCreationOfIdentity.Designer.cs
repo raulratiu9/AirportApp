@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace proiect_final.Migrations.Identity
+namespace AirportApp.Migrations.Identity
 {
     [DbContext(typeof(IdentityContext))]
     [Migration("20240118153757_initialDbCreationOfIdentity")]
