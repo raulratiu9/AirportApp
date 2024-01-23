@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace proiect_final.Migrations
+namespace AirportApp.Migrations
 {
     [DbContext(typeof(AirportContext))]
     partial class AirportContextModelSnapshot : ModelSnapshot

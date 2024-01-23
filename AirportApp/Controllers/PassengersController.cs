@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace proiect_final.Controllers
+namespace AirportApp.Controllers
 {
     public class PassengersController : Controller
     {

@@ -9,7 +9,7 @@ using AirportApp.Data;
 
 #nullable disable
 
-namespace proiect_final.Migrations
+namespace AirportApp.Migrations
 {
     [DbContext(typeof(AirportContext))]
     [Migration("20240118152233_initialDbCreation")]

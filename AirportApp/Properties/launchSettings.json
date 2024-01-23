@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "proiect_final": {
+    "AirportApp": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

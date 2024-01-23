@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace proiect_final.Migrations
+namespace AirportApp.Migrations
 {
     public partial class addValuesToTables : Migration
     {

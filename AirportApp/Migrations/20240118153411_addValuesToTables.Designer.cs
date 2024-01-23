@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace proiect_final.Migrations
+namespace AirportApp.Migrations
 {
     [DbContext(typeof(AirportContext))]
     [Migration("20240118153411_addValuesToTables")]

@@ -8,7 +8,7 @@
         public int Price { get; set; }
         public int CompanyId { get; set; }
         public int GateId { get; set; }
-        public Company Company { get; set; }
-        public Gate Gate { get; set; }
+        public Company? Company { get; set; }
+        public Gate? Gate { get; set; }
     }
 }

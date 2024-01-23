@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace proiect_final.Migrations.Identity
+namespace AirportApp.Migrations.Identity
 {
     public partial class initialDbCreationOfIdentity : Migration
     {
